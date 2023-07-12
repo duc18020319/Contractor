@@ -1,0 +1,1 @@
+Blockchain-Based Voting: Hãy xây dựng một ứng dụng phi tập trung (dApp) với mục đích đảm bảo việc bỏ phiếu diễn ra an toàn và minh bạch. Người dùng có thể tham gia vào các cuộc thăm dò ý kiến, bình chọn để đưa ra phiếu bầu của mình và theo dõi kết quả. Sử dụng smart contract để đảm bảo tính toàn vẹn và không thể thay đổi của quá trình bỏ phiếu.
