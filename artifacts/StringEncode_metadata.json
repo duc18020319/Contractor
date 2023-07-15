@@ -1,21 +1,27 @@
 {
 	"compiler": {
-		"version": "0.8.6+commit.11564f7e"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"name": "greet",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "string",
-						"name": "",
+						"name": "self",
 						"type": "string"
 					}
 				],
-				"stateMutability": "view",
+				"name": "encode",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
 				"type": "function"
 			}
 		],
@@ -32,9 +38,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"main.sol": "HelloWorld"
+			"main.sol": "StringEncode"
 		},
-		"evmVersion": "berlin",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -47,11 +53,11 @@
 	},
 	"sources": {
 		"main.sol": {
-			"keccak256": "0xb427af446e3464efda66f0bcc2b389eec5b5fa05b630662e76f9dcd22f428bd2",
+			"keccak256": "0xbd349df4fb7cb5656f9ea61bce08699e0ccbe408ebfa5e1409b9dfb3990d599d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f71ccaafb143e640d4c14430774134e0ccc7f65bfcc371f5ebb51998e25e407f",
-				"dweb:/ipfs/QmT1qw2XjoXUx7b2Xqz5kepFQeJKWZxA6JgndGUQhCzrPE"
+				"bzz-raw://f557b6acacc581e98e474f86614503d2b765fd4d020f7b42fb85aae10aa6e8ba",
+				"dweb:/ipfs/QmakZNSdGbu3TDE5qsXae18wduZa577CDrxyQfBTCijDgv"
 			]
 		}
 	},

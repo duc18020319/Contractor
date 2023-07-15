@@ -1,35 +1,95 @@
-
 // SPDX-License-Identifier: MIT
 // compiler version must be greater than or equal to 0.8.17 and less than 0.9.0
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.18;
 
-contract FastFood
+library StringEncode
 {
-    uint256 public total_calo;
+    function encode(string memory self) public pure returns(bytes32)
+    {
+        bytes32 result = keccak256(abi.encodePacked(self));
+        return result;
+    }
+}
+
+contract Contractor
+{
+    using StringEncode for string;
+    uint256 public total_cash;
     uint8 private id;
 
-    bool private available;
+    bool private status;
 
-    enum TypeFastFood
+    enum ContractTypes
     {
-        Hamburger,
-        Chips,
-        Taco
+        Cooperation,
+        Purchase,
+        Trade
     }
 
-    struct Ingredient
+    struct Bill
     {
-        string name;
-        uint256 value;
+        string owner;
+        uint256 cash;
     }
 
-    mapping(string => uint256) public ingredient;
-    address public owner;
-    event AddIngredient(string name,uint256 calo);
+    mapping(string => uint256) public queryCash;
+    mapping(uint256 => string) public queryOwner;
+    address public administrator;
+    event createBill(string owner,uint256 cash);
 
-    constructor(address _owner,uint256 _totalCalo)
+    constructor(address _administrator,uint256 _total_cash)
     {
-        owner = _owner;
-        total_calo = _totalCalo;
+        administrator = _administrator;
+        total_cash = _total_cash;
     }
+
+    receive() external payable 
+    {
+
+    }
+
+    fallback() external
+    {
+        
+    }
+
+    modifier onlyOwner(address sender)
+    {
+        require(sender == administrator,"Wrong administration!");
+        _;
+    }
+
+    function getBill(string memory _owner) public view returns(uint256)
+    {
+        uint256 cash = queryCash[_owner];
+        return cash;
+    }
+
+    function addBill(string[] memory _owner,uint256[] memory _cash) public onlyOwner(msg.sender)
+    {
+        uint256 index = 0;
+        if (msg.sender == administrator)
+        {
+            while (index < _owner.length)
+            {
+                queryCash[_owner[index]] = _cash[index];
+                ++index;
+            }
+        }
+        else 
+        {
+            revert();
+        }
+    }
+
+    function encode_string(string memory input) public pure returns(bytes32)
+    {
+        return input.encode();
+    }
+}
+
+interface Purchase
+{
+    function getBill(string memory) external view returns(uint256);
+    function addBill(string memory,uint256) external;
 }
