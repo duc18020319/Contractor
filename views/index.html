@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contractor</title>
+        <link rel="stylesheet" href="./styles.css"/>
+        <meta charset="utf-8"/>
+        <meta content="{{csrf_field()}}"/>
+    </head>
+
+    <body
+        style="
+            width: 100vw;
+            height: 100vh;
+            max-width: 1920px;
+            min-width: 1080px;
+            background-color: #FFFFFF;
+            opacity: 1;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        "
+    >
+        <div
+            class="header"
+            style="
+                flex: 1;
+                width: 100%;
+                height: 100%;
+                background-color: #0F0F0F;
+                color: #FFFFFF;
+                opacity: 0.8;
+                border-bottom: solid 1px #0F0F0F;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                user-select: none;
+                pointer-events: none;
+            "
+        >
+            <div
+                style="
+                    flex: 3;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 30px;
+                    font-weight: 800;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                "
+            >Contractor</div>
+            <div
+                style="
+                    flex: 2;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 18px;
+                    font-weight: 600;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                "
+            >Token voting</div>
+        </div>
+
+        <div
+            class="content"
+            style="
+                flex: 9;
+                width: 100%;
+                height: 100%;
+                background-color: #868686;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            "
+        >
+            <div
+                class="content--left"
+                style="
+                    flex: 1;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                "
+            >
+                <div
+                    class="content-auxillary"
+                    style="
+                        width: 95%;
+                        height: 95%;
+                        background-color: #F0F0F0;
+                        border: solid 0px #0F0F0F;
+                        border-radius: 25px;
+                        box-shadow: inset;
+                    "
+                >
+
+                </div>
+            </div>
+            <div
+                class="content--right"
+                style="
+                    flex: 5;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                "
+            >
+                <div
+                    class="content-main"
+                    style="
+                        width: 95%;
+                        height: 95%;
+                        background-color: #F0F0F0;
+                        border: solid 0px #0F0F0F;
+                        border-radius: 25px;
+                        box-shadow: 1px;  
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    "
+                >
+                    <section
+                        class="content-main_title"
+                        style="
+                            flex: 1;
+                            width: 100%;
+                            height: 100%;
+                            font-size: 18px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            user-select: none;
+                            pointer-events: none;
+                        "
+                    >Vote & Propose</section>
+
+                    <div
+                        class="separate-line--horizontal"
+                        style="
+                            width: 93%;
+                            height: 1px;
+                            background-color: #0F0F0F;
+                        "
+                    ></div>
+
+                    <div
+                        class="content-main_view"
+                        style="
+                            flex: 9;
+                            width: 100%;
+                            height: 100%;
+                            font-size: 13px;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            align-items: center;
+                        "
+                    >
+                        <form
+                            class="content-main_vote-section"
+                            id="vote-form"
+                            role="form"
+                            method='POST'
+                            style="
+                                flex: 1;
+                                width: calc(100% - 32px);
+                                height: calc(100% - 32px);
+                                border: solid 1px #0F0F0F;
+                                margin: 16px 16px 16px 16px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                            "
+                        >
+                            <section
+                                class="voting-area"
+                            > 
+                                <label
+                                    class="voting-area_input-label"
+                                    for="account_owner"
+                                >
+                                    Account owner
+                                </label>
+                                <input
+                                    class="voting-area_input-box"
+                                    id="account_owner"
+
+                                />
+                            </section>
+                            <section
+                                class="voting-area"
+                            > 
+                                <label
+                                    class="voting-area_input-label"
+                                    for="tokens"
+                                >
+                                    Tokens
+                                </label>
+                                <input
+                                    class="voting-area_input-box"
+                                    id="tokens"
+
+                                />
+                            </section>
+                            <div
+                                class="voting-wrapper"
+                                style="
+                                    flex: 1;
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    align-items: center;
+                                "
+                            >
+                                <section
+                                    class="voting-area"
+                                > 
+                                    <label
+                                        class="voting-area_input-label"
+                                        for="stocks"
+                                    >
+                                        Stocks
+                                    </label>
+                                    <input
+                                        class="voting-area_input-box"
+                                        id="stocks"
+
+                                    />
+                                </section>
+                                <section
+                                    class="voting-area"
+                                > 
+                                    <label
+                                        class="voting-area_input-label"
+                                        for="job"
+                                    >
+                                        Job
+                                    </label>
+                                    <input
+                                        class="voting-area_input-box"
+                                        id="job"
+
+                                    />
+                                </section>
+                            </div>
+                            <section
+                                class="voting-area"
+                            > 
+                                <label
+                                    class="voting-area_input-label"
+                                    for="signature"
+                                >
+                                    Signature
+                                </label>
+                                <input
+                                    class="voting-area_input-box"
+                                    id="signature"
+
+                                />
+                            </section>
+                            <section
+                                class="voting-area"
+                            > 
+                                <button
+                                    class="button"
+                                    form="vote-form"
+                                    type="submit"
+                                    onclick="fetchVoteDataToBlockchain()"
+                                >Vote</button>
+                            </section>
+
+                            <div
+                                class="contract-info"
+                            > 
+                                <div
+                                    class="contract-info-label"
+                                    id="label"
+                                >
+                                    Contract vote ID:
+                                </div>
+                                <div
+                                    class="contract-info-value"
+                                    id="value"
+                                >
+
+                                </div>
+                            </div>
+
+                            <script
+                                type="text/javascript"
+                            >
+                                async function fetchVoteDataToBlockchain()
+                                {
+                                    const account_owner = document.querySelector('#account_owner').innerHTML;
+                                    await fetch("",{
+                                        method: 'POST',
+                                        mode: 'cors',
+                                        headers: {
+                                            "Content-Type": "application/json",
+                                            "Access-Controll-Allow-Origin": "*"
+                                        },
+                                        body: JSON.stringify({
+                                            account_owner: account_owner
+                                        }),
+                                    })
+                                    .then((response) => response.json())
+                                    .then((responseJSON) => {
+                                        document.querySelector('#proposal-counts').innerHTML = response.proposal_counts;
+                                        document.querySelector('#total-voters').innerHTML = response.total_voters;
+                                        document.querySelector('#contract-value').innerHTML = response.contract_value;
+                                        document.querySelector('#positive-counts').innerHTML = response.positive_counts;
+                                        document.querySelector('#negative-counts').innerHTML = response.negative_counts;
+                                    })
+                                    .catch((error) => alert("Error: " + error));
+                                }
+                            </script>
+                        </form>
+
+                        <div
+                            class="separate-line--vertical"
+                            style="
+                                width: 1px;
+                                height: 93%;
+                                background-color: #0F0F0F;
+                            "
+                        >
+
+                        </div>
+
+                        <div
+                            class="content-main_network-info"
+                            style="
+                                flex: 1;
+                                width: calc(100% - 32px);
+                                height: calc(100% - 32px);
+                                margin: 16px 16px 16px 16px;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                            "
+                        >
+                            <section
+                                class="content-main_network-info_render"
+                                id="total-voters"
+                            >
+                                <div
+                                    class="info-label"
+                                    id="label"
+                                >
+                                    Total voters: 
+                                </div>
+                                <div
+                                    class="info-value"
+                                    id="value"
+                                >
+
+                                </div>
+                            </section>
+                            <section
+                                class="content-main_network-info_render"
+                                id="proposal-counts"
+                            >
+                                
+                                <div
+                                    class="info-label"
+                                    id="label"
+                                >
+                                    Proposal counts: 
+                                </div>
+                                <div
+                                    class="info-value"
+                                    id="value"
+                                >
+
+                                </div>
+                            </section>
+                            <section
+                                class="content-main_network-info_render"
+                                id="contract-value"
+                            >
+                                <div
+                                    class="info-label"
+                                    id="label"
+                                >
+                                    Contract value: 
+                                </div>
+                                <div
+                                    class="info-value"
+                                    id="value"
+                                >
+
+                                </div>
+                            </section>
+                            <section
+                                class="content-main_network-info_render"
+                                id="positive-counts"
+                            >
+                                <div
+                                    class="info-label"
+                                    id="label"
+                                >
+                                    Positive counts:
+                                </div>
+                                <div
+                                    class="info-value"
+                                    id="value"
+                                >
+
+                                </div>
+                            </section>
+                            <section
+                                class="content-main_network-info_render"
+                                id="negative-counts"
+                            >
+                                <div
+                                    class="info-label"
+                                    id="label"
+                                >
+                                    Negative counts:
+                                </div>
+                                <div
+                                    class="info-value"
+                                    id="value"
+                                >
+
+                                </div>
+                            </section>
+                            <section
+                                class="content-main_network-info_options"
+                                style="
+                                    flex: 1;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                "
+                            >
+                                <div
+                                    class="button"
+                                    id="refresh"
+                                    onclick="fetchVoteDataFromBlockchain()"
+                                >Refresh</div>
+                            </section>
+                            
+                            <script
+                                type="text/javascript"
+                            >
+                                async function fetchVoteDataFromBlockchain()
+                                {
+                                    await fetch("",{
+                                        method: 'GET',
+                                        mode: 'cors',
+                                        headers: {
+                                            "Content-Type": "application/json",
+                                            "Access-Controll-Allow-Origin": "*"
+                                        },
+                                    })
+                                    .then((response) => response.json())
+                                    .then((responseJSON) => {
+                                        document.querySelector('#proposal-counts').innerHTML = response.proposal_counts;
+                                        document.querySelector('#total-voters').innerHTML = response.total_voters;
+                                        document.querySelector('#contract-value').innerHTML = response.contract_value;
+                                        document.querySelector('#positive-counts').innerHTML = response.positive_counts;
+                                        document.querySelector('#negative-counts').innerHTML = response.negative_counts;
+                                    })
+                                    .catch((error) => alert("Error: " + error));
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <style
+        rel="stylesheet"
+        type="text/css"
+    >   
+        :root
+        {
+            --input-label-margin-left: 16px;
+            --input-box-padding-left: 16px;
+        }
+
+        .voting-area
+        {
+            flex: 1;
+            width: calc(100% - 16px);
+            height: 100%;
+            margin: 8px 8px 8px 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .voting-area_input-label
+        {
+            margin: 4px 4px 4px var(--input-label-margin-left);
+            font-weight: 800;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .voting-area_input-box
+        {
+            width: calc(81% - var(--input-box-padding-left));
+            min-height: 36px;
+            max-height: 48px;
+            border: solid 1px #0F0F0F;
+            border-radius: 256px;
+            outline: solid 0px #0F0F0F;
+            padding-left: var(--input-box-padding-left);
+        }
+
+        .content-main_network-info_render
+        {
+            flex: 1;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .contract-info
+        {
+            margin-bottom: 10px;
+        }
+        .contract-info-label
+        {
+            user-select: none;
+            font-size: 12px;
+        }
+
+        .button
+        {
+            background-color: #9c9c9c;
+            max-width: 120px;
+            min-width: 90px;
+            max-height: 40px;
+            min-height: 30px;
+            border: solid 1px #0F0F0F;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+        .button:hover
+        {
+            background-color: #414141;
+            color: #F0F0F0;
+        }
+    </style>
+</html>
